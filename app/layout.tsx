@@ -6,16 +6,18 @@ import Footer from '@/components/layout/footer'
 import { Toaster } from 'sonner'
 import { CartProvider } from '@/components/cart/cart-context'
 
-const { SITE_NAME } = process.env
+const { SITE_NAME, NEXT_PUBLIC_BASE_URL } = process.env
+const baseUrl = NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: SITE_NAME!,
     template: `%s | ${SITE_NAME}`,
   },
-  description: 'High-performance ecommerce store built with Next.js',
-  openGraph: {
-    type: 'website',
+  robots: {
+    follow: true,
+    index: true,
   },
 }
 

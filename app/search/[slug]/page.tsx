@@ -1,11 +1,28 @@
 import Grid from '@/components/grid'
 import ProductsGrid from '@/components/grid/products-grid'
-import { fetchData, getProductsByCategory } from '@/lib'
+import { fetchData, getCategoryNameBySlug, getProductsByCategory } from '@/lib'
 import { DEFAULT_SORT, SORTING } from '@/lib/constants'
+import { notFound } from 'next/navigation'
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}) => {
+  const slug = (await params).slug
+  const categoryName = getCategoryNameBySlug(slug)
+
+  if (!categoryName) return notFound()
+
+  return {
+    title: categoryName,
+    description: `${categoryName} products`,
+  }
 }
 
 export const generateStaticParams = async () => {

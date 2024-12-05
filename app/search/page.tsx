@@ -2,6 +2,12 @@ import Grid from '@/components/grid'
 import ProductsGrid from '@/components/grid/products-grid'
 import { getProducts } from '@/lib'
 import { DEFAULT_SORT, SORTING } from '@/lib/constants'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Search',
+  description: 'Search for products in the store.',
+}
 
 interface SearchPageProps {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>

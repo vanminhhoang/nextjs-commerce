@@ -11,6 +11,7 @@ import CloseCart from './close-cart'
 import ProductPrice from '../product/product-price'
 import { useCart } from './cart-context'
 import DeleteItemButton from './delete-item-button'
+import { getProductSlug } from '@/lib'
 
 const CartModal = () => {
   const { products, totalQuantity, totalAmount, isOpen, toggleIsOpen } =
@@ -60,6 +61,8 @@ const CartModal = () => {
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
                   <ul className="flex-grow overflow-auto py-4">
                     {products.map((product) => {
+                      const productSlug = getProductSlug(product.title)
+
                       return (
                         <li
                           key={product.id}
@@ -79,7 +82,7 @@ const CartModal = () => {
                                 />
                               </div>
                               <Link
-                                href="/search"
+                                href={`/product/${productSlug}`}
                                 onClick={toggleIsOpen}
                                 className="z-30 ml-2 flex flex-row space-x-4">
                                 <div className="flex flex-1 flex-col text-base">

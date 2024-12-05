@@ -2,19 +2,54 @@ import ProductDescription from '@/components/product/product-description'
 import ProductGallery from '@/components/product/product-gallery'
 import RelatedProducts from '@/components/product/related-products'
 import { getProduct, getProducts, getProductSlug } from '@/lib'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> => {
+  const slug = (await params).slug
+  const product = await getProduct(slug)
+
+  if (!product) return notFound()
+
+  const url = product.images?.[0] || product.thumbnail
+
+  return {
+    title: product.title,
+    description: product.description,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    openGraph: url
+      ? {
+          images: [
+            {
+              url,
+              width: 640,
+              height: 640,
+              alt: product.title,
+            },
+          ],
+        }
+      : null,
+  }
+}
 
 export const generateStaticParams = async () => {
   const { products } = await getProducts({ limit: 20 })
 
   if (!products) return []
 
-  return products.map((product) => {
-    const productSlug = getProductSlug(product.title)
-
-    return { slug: productSlug }
-  })
+  return products.map((product) => ({ slug: getProductSlug(product.title) }))
 }
 
 const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {

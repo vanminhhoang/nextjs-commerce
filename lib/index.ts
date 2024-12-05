@@ -87,6 +87,17 @@ export const getCategories = async (): Promise<
   return [CATEGORY_ALL, ...categories]
 }
 
+export const getCategoryNameBySlug = (slug: string) => {
+  const names = slug.split('-')
+  const categoryName = names
+    .map((name) => {
+      return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+    })
+    .join(' ')
+
+  return categoryName
+}
+
 export const getProduct = async (slug: string): Promise<Product> => {
   const productData = await fetchData({
     endpoint: `/products/search?q=${slug}`,
