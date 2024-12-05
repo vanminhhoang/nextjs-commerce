@@ -67,6 +67,7 @@ const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {
               <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
             }>
             <ProductGallery
+              title={product.title}
               images={product.images
                 .slice(0, 5)
                 .map((image: string) => ({ src: image, alt: product.title }))}

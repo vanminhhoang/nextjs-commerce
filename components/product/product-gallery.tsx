@@ -5,12 +5,15 @@ import Image from 'next/image'
 import ProductItem from './product-item'
 import { useSearchParams } from 'next/navigation'
 import { useUpdateURL } from '@/lib/hooks'
+import Link from 'next/link'
+import { getProductSlug } from '@/lib'
 
 interface ProductGalleryProps {
   images: { src: string; alt: string }[]
+  title: string
 }
 
-const ProductGallery = ({ images }: ProductGalleryProps) => {
+const ProductGallery = ({ images, title }: ProductGalleryProps) => {
   const updateURL = useUpdateURL()
   const searchParams = useSearchParams()
 
@@ -25,14 +28,18 @@ const ProductGallery = ({ images }: ProductGalleryProps) => {
     <form>
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
         {images[imageIndex] && (
-          <Image
-            className="h-full w-full object-contain"
-            fill
-            sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[imageIndex]?.alt as string}
-            src={images[imageIndex]?.src as string}
-            priority={true}
-          />
+          <Link
+            href={`/product/${getProductSlug(title)}/image/${imageIndex}`}
+            passHref>
+            <Image
+              className="h-full w-full object-contain"
+              fill
+              sizes="(min-width: 1024px) 66vw, 100vw"
+              alt={images[imageIndex]?.alt as string}
+              src={images[imageIndex]?.src as string}
+              priority={true}
+            />
+          </Link>
         )}
 
         {images.length > 1 ? (

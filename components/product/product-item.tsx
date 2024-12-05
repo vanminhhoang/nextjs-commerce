@@ -29,7 +29,7 @@ const ProductItem = ({
           'border-neutral-200 dark:border-neutral-800': !active,
         }
       )}>
-      {props.src ? (
+      {props.src && (
         <Image
           className={clsx('relative h-full w-full object-contain', {
             'transition duration-300 ease-in-out group-hover:scale-105':
@@ -38,7 +38,7 @@ const ProductItem = ({
           {...props}
           alt={label?.title || ''}
         />
-      ) : null}
+      )}
       {label ? (
         <ProductLabel
           title={label.title}
