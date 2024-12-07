@@ -1,1 +1,27 @@
-{}
+{
+  "all": "All",
+
+  "cart": {
+    "addToCart": "Add To Cart",
+    "myCart": "My Cart",
+    "taxes": "Taxes",
+    "shipping": "Shipping",
+    "total": "Total",
+    "calculatedAtCheckout": "Calculated at checkout",
+    "proceedToCheckout": "Proceed to Checkout",
+    "cartEmpty": "Your cart is empty."
+  },
+
+  "search": {
+    "search": "Search for products",
+    "categories": "Categories",
+    "sortBy": "Sort By",
+    "relevance": "Relevance",
+    "priceLowToHigh": "Price: Low to high",
+    "priceHighToLow": "Price: High to low"
+  },
+
+  "product": {
+    "relatedProducts": "Related Products"
+  }
+}

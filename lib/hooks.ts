@@ -1,6 +1,8 @@
 'use client'
 
+import { Locale } from '@/i18n-config'
 import { useRouter } from 'next/navigation'
+import { getLocale } from '.'
 
 export function useUpdateURL() {
   const router = useRouter()
@@ -12,4 +14,9 @@ export function useUpdateURL() {
     })
     router.push(`?${newParams.toString()}`, { scroll: false })
   }
+}
+
+export const useLocale = async (locale: Locale) => {
+  const data = await getLocale(locale)
+  return data
 }

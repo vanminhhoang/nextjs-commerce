@@ -1,8 +1,8 @@
 import Categories from '@/components/layout/search/categories'
-import FilterList from '@/components/layout/search/filter'
 import { SORTING } from '@/lib/constants'
 import ChildrenWrapper from './children-wrapper'
 import { Suspense } from 'react'
+import FilterListComponent from '@/components/layout/search/filter/list'
 
 const SearchLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -16,7 +16,7 @@ const SearchLayout = ({ children }: { children: React.ReactNode }) => {
         </Suspense>
       </div>
       <div className="order-none flex-none md:order-last md:w-[125px]">
-        <FilterList list={SORTING} title="Sort by" />
+        <FilterListComponent list={SORTING} title="sortBy" />
       </div>
     </div>
   )

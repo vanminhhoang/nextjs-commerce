@@ -12,10 +12,12 @@ import ProductPrice from '../product/product-price'
 import { useCart } from './cart-context'
 import DeleteItemButton from './delete-item-button'
 import { getProductSlug } from '@/lib'
+import { useApp } from '../app-context'
 
 const CartModal = () => {
   const { products, totalQuantity, totalAmount, isOpen, toggleIsOpen } =
     useCart()
+  const { locale } = useApp()
 
   return (
     <>
@@ -44,7 +46,7 @@ const CartModal = () => {
             leaveTo="translate-x-full">
             <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-black/80 dark:text-white">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold">My Cart</p>
+                <p className="text-lg font-semibold">{locale.cart.myCart}</p>
                 <button aria-label="Close cart" onClick={toggleIsOpen}>
                   <CloseCart />
                 </button>
@@ -54,7 +56,7 @@ const CartModal = () => {
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
                   <ShoppingCartIcon className="h-16" />
                   <p className="mt-6 text-center text-2xl font-bold">
-                    Your cart is empty.
+                    {locale.cart.cartEmpty}
                   </p>
                 </div>
               ) : (
@@ -121,7 +123,7 @@ const CartModal = () => {
                   </ul>
                   <div className="py-4 text-sm text-neutral-500 dark:text-neutral-400">
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
-                      <p>Taxes</p>
+                      <p>{locale.cart.taxes}</p>
                       <ProductPrice
                         className="text-right text-base text-black dark:text-white"
                         amount="0"
@@ -129,11 +131,13 @@ const CartModal = () => {
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                      <p>Shipping</p>
-                      <p className="text-right">Calculated at checkout</p>
+                      <p>{locale.cart.shipping}</p>
+                      <p className="text-right">
+                        {locale.cart.calculatedAtCheckout}
+                      </p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                      <p>Total</p>
+                      <p>{locale.cart.total}</p>
                       <ProductPrice
                         className="text-right text-base text-black dark:text-white"
                         amount={totalAmount as unknown as string}
@@ -142,7 +146,7 @@ const CartModal = () => {
                     </div>
                   </div>
                   <button className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100">
-                    Proceed to Checkout
+                    {locale.cart.proceedToCheckout}
                   </button>
                 </div>
               )}

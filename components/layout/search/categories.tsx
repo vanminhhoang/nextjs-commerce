@@ -1,12 +1,12 @@
 import { Suspense } from 'react'
-import FilterList from './filter'
 import { getCategories } from '@/lib'
 import Skeleton from '@/components/skeleton'
+import FilterListComponent from './filter/list'
 
 const CategoryList = async () => {
   const categories = await getCategories()
 
-  return <FilterList list={categories} title="Categories" />
+  return <FilterListComponent list={categories} title="categories" />
 }
 
 const Categories = async () => {

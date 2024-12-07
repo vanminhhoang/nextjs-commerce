@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { getMenus } from '@/lib'
 import MobileMenu from './mobile-menu'
 import { Suspense } from 'react'
+import LocaleSwitcher from '@/components/locale-switcher'
 
 const Header = async () => {
   const menus = await getMenus()
@@ -38,7 +39,8 @@ const Header = async () => {
           </Suspense>
         </div>
       </div>
-      <div className="flex justify-end md:w-1/3">
+      <div className="flex items-center justify-end md:w-1/3 gap-2">
+        <LocaleSwitcher />
         <CartModal />
       </div>
     </div>

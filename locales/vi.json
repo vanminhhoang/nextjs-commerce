@@ -1,1 +1,27 @@
-{}
+{
+  "all": "Tất cả",
+
+  "cart": {
+    "addToCart": "Thêm vào giỏ hàng",
+    "myCart": "Giỏ hàng của tôi",
+    "taxes": "Thuế",
+    "shipping": "Vận chuyển",
+    "total": "Tổng tiền",
+    "calculatedAtCheckout": "Tính toán khi thanh toán",
+    "proceedToCheckout": "Tiến hành thanh toán",
+    "cartEmpty": "Giỏ hàng của bạn đang trống."
+  },
+
+  "search": {
+    "search": "Tìm kiếm sản phẩm",
+    "categories": "Danh mục",
+    "sortBy": "Sắp xếp theo",
+    "relevance": "Liên quan",
+    "priceLowToHigh": "Giá: Thấp đến cao",
+    "priceHighToLow": "Giá: Cao đến thấp"
+  },
+
+  "product": {
+    "relatedProducts": "Sản phẩm liên quan"
+  }
+}

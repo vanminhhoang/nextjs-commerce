@@ -133,4 +133,4 @@ export const onAwait = async (ms = 1000) => {
 }
 
 export const getLocale = async (locale: Locale) =>
-  locales[locale]?.() ?? locales.vi()
+  locales[locale]?.() ?? locales.en()

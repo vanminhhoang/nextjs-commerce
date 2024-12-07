@@ -1,6 +1,7 @@
 import { getProductsByCategory, getProductSlug } from '@/lib'
 import Link from 'next/link'
 import ProductItem from './product-item'
+import RelatedProductsTitle from './releted-products-title'
 
 const RelatedProducts = async ({ category }: { category: string }) => {
   const { products } = await getProductsByCategory(category)
@@ -9,7 +10,7 @@ const RelatedProducts = async ({ category }: { category: string }) => {
 
   return (
     <div className="py-8">
-      <h2 className="mb-4 text-2xl font-bold">Related Products</h2>
+      <RelatedProductsTitle />
       <ul className="flex w-full gap-4 overflow-x-auto pt-1">
         {products.map((product) => {
           const productSlug = getProductSlug(product.title)
