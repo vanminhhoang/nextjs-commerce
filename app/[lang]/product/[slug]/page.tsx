@@ -1,7 +1,7 @@
 import ProductDescription from '@/components/product/product-description'
 import ProductGallery from '@/components/product/product-gallery'
 import RelatedProducts from '@/components/product/related-products'
-import { getProduct, getProducts, getProductSlug } from '@/lib'
+import { getProduct } from '@/lib'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Suspense } from 'react'
@@ -44,13 +44,13 @@ export const generateMetadata = async ({
   }
 }
 
-export const generateStaticParams = async () => {
-  const { products } = await getProducts({ limit: 20 })
+// export const generateStaticParams = async () => {
+//   const { products } = await getProducts({ limit: 20 })
 
-  if (!products) return []
+//   if (!products) return []
 
-  return products.map((product) => ({ slug: getProductSlug(product.title) }))
-}
+//   return products.map((product) => ({ slug: getProductSlug(product.title) }))
+// }
 
 const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params

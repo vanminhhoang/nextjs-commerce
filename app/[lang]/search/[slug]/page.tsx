@@ -1,6 +1,6 @@
 import Grid from '@/components/grid'
 import ProductsGrid from '@/components/grid/products-grid'
-import { fetchData, getCategoryNameBySlug, getProductsByCategory } from '@/lib'
+import { getCategoryNameBySlug, getProductsByCategory } from '@/lib'
 import { DEFAULT_SORT, SORTING } from '@/lib/constants'
 import { notFound } from 'next/navigation'
 
@@ -25,13 +25,13 @@ export const generateMetadata = async ({
   }
 }
 
-export const generateStaticParams = async () => {
-  const categories = await fetchData({ endpoint: '/products/categories' })
+// export const generateStaticParams = async () => {
+//   const categories = await fetchData({ endpoint: '/products/categories' })
 
-  return categories.map((category: { slug: string }) => ({
-    slug: category.slug,
-  }))
-}
+//   return categories.map((category: { slug: string }) => ({
+//     slug: category.slug,
+//   }))
+// }
 
 const CategoryPage = async (props: CategoryPageProps) => {
   const params = await props.params

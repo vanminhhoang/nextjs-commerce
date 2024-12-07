@@ -1,3 +1,4 @@
+import { Locale } from '@/i18n-config'
 import { Params, Product } from '@/types/product'
 import queryString from 'query-string'
 
@@ -8,6 +9,11 @@ interface FetchData {
 
 const MENU_ALL = { slug: '', name: 'All' }
 const CATEGORY_ALL = { name: 'All', path: '/search' }
+
+const locales = {
+  en: () => import('../locales/en.json').then((module) => module.default),
+  vi: () => import('../locales/vi.json').then((module) => module.default),
+}
 
 export const fetchData = async ({ endpoint, options }: FetchData) => {
   try {
@@ -125,3 +131,6 @@ export const onAwait = async (ms = 1000) => {
     }, ms)
   })
 }
+
+export const getLocale = async (locale: Locale) =>
+  locales[locale]?.() ?? locales.vi()
