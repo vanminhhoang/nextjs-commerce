@@ -82,7 +82,40 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.8.tgz"
   integrity sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==
 
-"@formatjs/intl-localematcher@^0.5.8":
+"@formatjs/ecma402-abstract@2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-2.2.5.tgz#835a51fff7f7d22b7eebb36d28b03b317e14094f"
+  integrity sha512-ep/5vGkyZvMSi6s8nQG8k7vTcKjuXs402fgGIWixj0AWRgKbeaZeLuYc32NIPXexgBjWepMeZGgHLuZXkuD2Gg==
+  dependencies:
+    "@formatjs/fast-memoize" "2.2.4"
+    "@formatjs/intl-localematcher" "0.5.8"
+    tslib "2"
+
+"@formatjs/fast-memoize@2.2.4", "@formatjs/fast-memoize@^2.2.0":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@formatjs/fast-memoize/-/fast-memoize-2.2.4.tgz#34350af24467c3174f1749a9cfd36aad6df4d041"
+  integrity sha512-8SzI0cBADgbLOYsoQW/IqVHljCH964CrOdESFQ07wMkRLP90+MfV7k6gZPiGD88ubqET9igJV5c292rT28B7xQ==
+  dependencies:
+    tslib "2"
+
+"@formatjs/icu-messageformat-parser@2.9.5":
+  version "2.9.5"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.9.5.tgz#50811640b52933d7c2d5f9dc08cad7ea3d313caf"
+  integrity sha512-mHauC9wuVXtnshAIoAYjlNrh6+OFOT6cC4fpK+AG+DHkVWwIPFVQE28hLQ/KptuvQ8VMfG/zYx6rRjtaeFPkSQ==
+  dependencies:
+    "@formatjs/ecma402-abstract" "2.2.5"
+    "@formatjs/icu-skeleton-parser" "1.8.9"
+    tslib "2"
+
+"@formatjs/icu-skeleton-parser@1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.8.9.tgz#c761cacbadd4cc60586fb7ede8f8ab49c23aae99"
+  integrity sha512-1KSSlU7ywsU5E5v7xr6VTlBzLGszMi3GOu7EVINjkfA501GN5OkeNSbd5q6ie1wIknZJGBlqkvXPYYdp3YXjpw==
+  dependencies:
+    "@formatjs/ecma402-abstract" "2.2.5"
+    tslib "2"
+
+"@formatjs/intl-localematcher@0.5.8", "@formatjs/intl-localematcher@^0.5.4", "@formatjs/intl-localematcher@^0.5.8":
   version "0.5.8"
   resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.5.8.tgz#b11bbd04bd3551f7cadcb1ef1e231822d0e3c97e"
   integrity sha512-I+WDNWWJFZie+jkfkiK5Mp4hEDyRSEvmyfYadflOno/mmKJKcB17fEpEH0oJu/OWhhCJ8kJBDz2YMd/6cDl7Mg==
@@ -1699,6 +1732,16 @@ internal-slot@^1.0.7:
     hasown "^2.0.0"
     side-channel "^1.0.4"
 
+intl-messageformat@^10.5.14:
+  version "10.7.8"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-10.7.8.tgz#6dcb2da5170c355b2495342cfb0c9f26e5b635e9"
+  integrity sha512-XnFFzJnTfdaDqeiF/ZAUjpkoKEM8UKwHijQXuqpLiM42kuJCawytP/rYAMDYNNaWww/PTaI0rIoG4oUjRrRlnA==
+  dependencies:
+    "@formatjs/ecma402-abstract" "2.2.5"
+    "@formatjs/fast-memoize" "2.2.4"
+    "@formatjs/icu-messageformat-parser" "2.9.5"
+    tslib "2"
+
 is-array-buffer@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/is-array-buffer/-/is-array-buffer-3.0.4.tgz"
@@ -2113,6 +2156,15 @@ negotiator@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-1.0.0.tgz#b6c91bb47172d69f93cfd7c357bbb529019b5f6a"
   integrity sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==
+
+next-intl@^3.26.0:
+  version "3.26.0"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.26.0.tgz#ee76d975c8e03f1ba001f716d6e852f3a0f5501a"
+  integrity sha512-gkamnHIANQzeW8xpTGRxd0xiOCztQhY8GDp79fgdlw0GioqrjTEfSWLhHkgaAtvHRbuh/ByJdwiEY5eNK9bUSQ==
+  dependencies:
+    "@formatjs/intl-localematcher" "^0.5.4"
+    negotiator "^1.0.0"
+    use-intl "^3.26.0"
 
 next@15.0.3:
   version "15.0.3"
@@ -2975,6 +3027,14 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-intl@^3.26.0:
+  version "3.26.0"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.26.0.tgz#ba822c7d4ab3010d4f81154ef5e7d44f0aac1935"
+  integrity sha512-HGXmpjGlbEv1uFZPfm557LK8p/hv0pKF9UwnrJeHUTxQx6bUGzMgpmPRLCVY3zkr7hfjy4LPwQJfk4Fhnn+dIg==
+  dependencies:
+    "@formatjs/fast-memoize" "^2.2.0"
+    intl-messageformat "^10.5.14"
 
 util-deprecate@^1.0.2:
   version "1.0.2"

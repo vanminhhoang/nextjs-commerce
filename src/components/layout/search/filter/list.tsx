@@ -1,7 +1,7 @@
 'use client'
 
-import { useApp } from '@/components/app-context'
 import FilterList, { ListItem } from '.'
+import { useTranslations } from 'next-intl';
 
 interface FilterListProps {
   list: ListItem[]
@@ -9,9 +9,9 @@ interface FilterListProps {
 }
 
 const FilterListComponent = ({ list, title }: FilterListProps) => {
-  const { locale } = useApp()
+  const t = useTranslations('search');
 
-  return <FilterList list={list} title={locale.search[title]} />
+  return <FilterList list={list} title={t(title)} />
 }
 
 export default FilterListComponent

@@ -23,5 +23,10 @@
 
   "product": {
     "relatedProducts": "Related Products"
+  },
+
+  "error": {
+    "message": "There was an issue with our storefront. This could be a temporary issue, please try your action again.",
+    "tryAgain": "Try Again"
   }
 }

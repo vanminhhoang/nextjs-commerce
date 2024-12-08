@@ -23,5 +23,10 @@
 
   "product": {
     "relatedProducts": "Sản phẩm liên quan"
+  },
+
+  "error": {
+    "message": "Có sự cố với cửa hàng của chúng tôi. Đây có thể là sự cố tạm thời, vui lòng thử lại hành động của bạn.",
+    "tryAgain": "Thử lại"
   }
 }
