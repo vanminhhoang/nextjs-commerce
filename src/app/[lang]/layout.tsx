@@ -7,7 +7,7 @@ import { Toaster } from 'sonner'
 import { CartProvider } from '@/components/cart/cart-context'
 import { i18n, Locale } from '@/i18n/i18n-config'
 import { notFound } from 'next/navigation'
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 
 const { SITE_NAME, NEXT_PUBLIC_BASE_URL } = process.env
