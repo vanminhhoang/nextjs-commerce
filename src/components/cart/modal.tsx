@@ -3,7 +3,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { Fragment } from 'react'
 import IconOpenCartSquare from './icon-open-cart-square'
 import { EditItemQuantityButton } from './edit-item-quantity-button'
@@ -17,7 +17,7 @@ import { useTranslations } from 'next-intl'
 const CartModal = () => {
   const { products, totalQuantity, totalAmount, isOpen, toggleIsOpen } =
     useCart()
-  const t = useTranslations('cart');
+  const t = useTranslations('cart')
 
   return (
     <>
@@ -132,9 +132,7 @@ const CartModal = () => {
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                       <p>{t('shipping')}</p>
-                      <p className="text-right">
-                        {t('calculatedAtCheckout')}
-                      </p>
+                      <p className="text-right">{t('calculatedAtCheckout')}</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                       <p>{t('total')}</p>

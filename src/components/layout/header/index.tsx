@@ -1,7 +1,7 @@
 import LogoSquare from '@/components/logo-square'
 import Search from './search'
 import CartModal from '@/components/cart/modal'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { getMenus } from '@/lib'
 import MobileMenu from './mobile-menu'
 import { Suspense } from 'react'

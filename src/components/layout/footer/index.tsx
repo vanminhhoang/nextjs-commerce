@@ -1,7 +1,7 @@
 import LogoSquare from '@/components/logo-square'
 import { FOOTER_MENUS } from '@/lib/constants'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 
 const Footer = () => {
   return (

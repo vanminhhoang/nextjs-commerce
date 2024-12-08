@@ -1,10 +1,11 @@
 'use client'
 
-import { usePathname, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import type { ListItem } from '.'
 import { FilterItem } from './item'
+import { usePathname } from '@/i18n/routing'
 
 export default function FilterItemDropdown({ list }: { list: ListItem[] }) {
   const pathname = usePathname()

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/routing'
 import { ReactNode } from 'react'
 
 const ImageModal = ({ children }: { children: ReactNode }) => {

@@ -1,8 +1,8 @@
 'use client'
 
 import clsx from 'clsx'
-import Link from 'next/link'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { Link, usePathname } from '@/i18n/routing'
+import { useSearchParams } from 'next/navigation'
 import type { ListItem, PathFilterItem } from '.'
 import { createUrl } from '@/lib'
 import { SortFilterItem as ISortFilterItem } from '@/types/filter'

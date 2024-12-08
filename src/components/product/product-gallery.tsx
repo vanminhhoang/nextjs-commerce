@@ -5,7 +5,7 @@ import Image from 'next/image'
 import ProductItem from './product-item'
 import { useSearchParams } from 'next/navigation'
 import { useUpdateURL } from '@/lib/hooks'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { getProductSlug } from '@/lib'
 
 interface ProductGalleryProps {

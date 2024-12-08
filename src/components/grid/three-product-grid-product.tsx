@@ -1,5 +1,5 @@
 import { Product } from '@/types/product'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import ProductItem from '../product/product-item'
 import { getProductSlug } from '@/lib'
 
