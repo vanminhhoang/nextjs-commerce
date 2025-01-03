@@ -3,11 +3,11 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useSearchParams } from 'next/navigation'
 import Form from 'next/form'
-import { useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl'
 
 const Search = () => {
   const searchParams = useSearchParams()
-  const t = useTranslations('search');
+  const t = useTranslations('search')
 
   return (
     <Form action="/search" className="max-w-[350px] relative w-full">
