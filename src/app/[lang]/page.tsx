@@ -11,6 +11,7 @@ export const metadata = {
 export default function HomePage() {
   console.log('My name Hoang!')
   console.log('My name Hoang 2!')
+  console.log('abcd!')
 
   return (
     <>
