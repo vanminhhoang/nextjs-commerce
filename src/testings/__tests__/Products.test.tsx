@@ -15,7 +15,7 @@ describe('Products', () => {
   it('find product', async () => {
     render(<Products />)
     const loadingElement = screen.getByText(/Loading.../i)
-    expect(loadingElement).toBeInTheDocument()
+    expect(loadingElement).not.toBeInTheDocument()
     const productElement = await screen.findByText(
       /Eyeshadow Palette with Mirror/i
     )
