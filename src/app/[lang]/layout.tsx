@@ -42,6 +42,7 @@ export default async function RootLayout({
   console.log('🚀 ~ lang 123:', lang)
   console.log('🚀 ~ lang 456:', lang)
   console.log('🚀 ~ lang 789:', lang)
+  console.log('🚀 ~ lang abcd:', lang)
 
   // Ensure that the incoming `locale` is valid
   if (!i18n.locales.includes(lang)) {
