@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 export default function HomePage() {
-  console.log('Hello world 1 123!')
+  console.log('123123Hello world 1 123!')
 
   return (
     <>
