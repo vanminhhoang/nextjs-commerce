@@ -18,9 +18,9 @@ interface RootLayoutProps {
   params: Promise<{ lang: Locale }>
 }
 
-export function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }))
-}
+// export function generateStaticParams() {
+//   return i18n.locales.map((locale) => ({ lang: locale }))
+// }
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
