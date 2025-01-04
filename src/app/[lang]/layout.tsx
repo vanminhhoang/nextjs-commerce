@@ -40,6 +40,7 @@ export default async function RootLayout({
 }: RootLayoutProps) {
   const lang = (await params).lang
   console.log('🚀 ~ lang 123:', lang)
+  console.log('🚀 ~ lang 456:', lang)
 
   // Ensure that the incoming `locale` is valid
   if (!i18n.locales.includes(lang)) {
