@@ -18,7 +18,7 @@ interface RootLayoutProps {
   params: Promise<{ lang: Locale }>
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
