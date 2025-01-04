@@ -9,6 +9,8 @@ export const metadata = {
 }
 
 export default function HomePage() {
+  console.log('Hello world!')
+
   return (
     <>
       <ThreeProductsGrid />
