@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 export default function HomePage() {
-  console.log('My name Hoang!')
+  console.log('123!')
 
   return (
     <>
