@@ -18,9 +18,9 @@ interface RootLayoutProps {
   params: Promise<{ lang: Locale }>
 }
 
-// export function generateStaticParams() {
-//   return i18n.locales.map((locale) => ({ lang: locale }))
-// }
+export function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -39,10 +39,6 @@ export default async function RootLayout({
   params,
 }: RootLayoutProps) {
   const lang = (await params).lang
-  console.log('🚀 ~ lang 123:', lang)
-  console.log('🚀 ~ lang 456:', lang)
-  console.log('🚀 ~ lang 789:', lang)
-  console.log('🚀 ~ lang abcd:', lang)
 
   // Ensure that the incoming `locale` is valid
   if (!i18n.locales.includes(lang)) {
